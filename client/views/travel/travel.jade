@@ -1,0 +1,60 @@
+h1.title Travel where ever you like...
+.imgdiv(style='background-image:url({{flag}})')
+.image(style='background-image:url{{visaMap}})')
+.row
+  .col-xs-4
+    p.passport Passport from:
+    form#dropdown(role='form', novalidate,type='button', name='countryForm')
+      label
+        select(ng-model='countryFrom' ng-change='selectCollection(countryFrom)')
+          option(value='usavisarequire') USA
+          option(value='Australiavisarequire') Australia
+          option(value='Brazilvisarequire') Brazil
+          option(value='Canadavisarequire') Canada
+          option(value='Chinavisarequire') China
+          option(value='dominicanvisarequire') Dominican Rep.
+          option(value='Francevisarequire') France
+          option(value='Germanyvisarequire') Germany
+          option(value='Indiavisarequire') India
+          option(value='Japanvisarequire') Japan
+          option(value='Jordanvisarequire') Jordan
+          option(value='Kenyavisarequire') Kenya
+          option(value='lebanovisarequire') Lebano
+          option(value='Mexicovisarequire') Mexico
+          option(value='Russiavisarequire') Russia
+          option(value='SKvisarequire') South Korea
+          option(value='Thailandvisarequire') Thailand
+          option(value='UKvisarequire') UK
+  .col-xs-4
+
+    p.autocomplete Traveling To:
+    
+    .completebar <angucomplete id='countryFinder' placeholder='Search a Country' pause='100' selectedObject='country' localdata='allCountry' searchfields='Country' titlefield='Country' minlength='1' />
+  .col-xs-4
+
+.panel.panel-default(ng-show='country')
+  h1           {{country.originalObject.Country}}
+  h4.req Requirement: {{country.originalObject.Visarequirement}}
+  h3 Allowed to Stay:  {{country.originalObject.AllowedStay}}
+  h4 Notes:            {{country.originalObject.Notes}}
+.addthis_sharing_toolbox
+
+  script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50b326253d80a9bd', async='')
+ // .form-group
+        label(for='travelTo') Traveling To:
+       // input.form-control#travelTo(type='text', name='travelTo', ng-model='countryTo', autofocus, required)
+       // button.btn.btn-primary(ng-show='countryForm.$valid', ng-click='findCountry()') Go!
+  //.col-xs-9
+    //.panel.panel-default(ng-show='country')
+    //  h1  Country: {{countryOne}}
+    //  h1 Visa: {{country.originalObject.Country}}
+
+   // pre {{country | json}}
+    span{{temperature}}
+    img(ng-src='{{icon}}')
+    //img(ng-src='../assets/image/wings-web1.jpg')
+
+ // h2  Country:         {{countryOne}}
+//.panel(ng-repeat='c in allCountry') {{c.Country}}
+
+{{}}
